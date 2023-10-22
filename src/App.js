@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import OpeningButtons from './components/OpeningButtons';
+import RehabStretches from './components/RehabStretches';
+import WorkoutPreparation from './components/WorkoutPreparation';
+import QuestionsWorkout from './components/QuestionsWorkout';
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Router>
+      
+        <Routes>
+          <Route path = "/" element = {<OpeningButtons/>}/>
+          <Route path = "/Workout-preparation" element = {<WorkoutPreparation/>}/>
+          <Route path = "/Rehab-stretches" element = {<RehabStretches/>}/>
+          <Route path = "/QuestionsWorkout" element = {<QuestionsWorkout/>}/>
+          
+        </Routes>
+      </Router>
+      
     </div>
   );
 }
